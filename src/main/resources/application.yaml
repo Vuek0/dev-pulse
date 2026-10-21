@@ -1,3 +1,13 @@
 spring:
   application:
     name: dev-pulse
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
